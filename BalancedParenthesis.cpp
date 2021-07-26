@@ -1,6 +1,6 @@
 
-void solve(int open,int cose ,string op,vector<string>& v) {
-    if(open==0 && cose==0) {
+void solve(int open,int close ,string op,vector<string>& v) {
+    if(open==0 && close==0) {
         v.push_back(op);
         return;
     }
@@ -8,14 +8,14 @@ void solve(int open,int cose ,string op,vector<string>& v) {
     string op1 = op;
     
     op1.push_back('(');
-    solve(open-1,cose,op1,v);
+    solve(open-1,close,op1,v);
     return;
     }
-    if(cose>open) 
+    if(close>open) 
     {
         string op2 = op;
         op2.push_back(')');
-        solve(open,cose-1,op2,v);
+        solve(open,close-1,op2,v);
         return;
     }
 }
