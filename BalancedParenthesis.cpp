@@ -11,7 +11,7 @@ void solve(int open,int close ,string op,vector<string>& v) {
     solve(open-1,close,op1,v);
     return;
     }
-    if(close>open) 
+    if(close != 0 && close > open) 
     {
         string op2 = op;
         op2.push_back(')');
